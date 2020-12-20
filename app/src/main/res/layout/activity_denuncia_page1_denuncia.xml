@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorTextDefaultWhite"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/logo_sem_nome"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Faça sua denúncia aqui!"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Remetente:"
+                android:layout_margin="16dp"
+                android:textColor="@color/colorTextDefaultRed" />
+
+            <EditText
+                android:id="@+id/text_remetente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anônimo"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="10dp"
+                android:inputType="text"
+                android:background="@drawable/box_edit_contatos"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Denúncia:"
+                android:layout_margin="16dp"
+                android:textColor="@color/colorTextDefaultRed" />
+
+            <EditText
+                android:id="@+id/text_write_denuncia"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:hint="Escreva sua denúncia aqui..."
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:padding="16dp"
+                android:justificationMode="inter_word"
+                android:background="@drawable/box_edit_denuncia"
+                android:gravity="top"
+                android:inputType="textMultiLine"/>
+
+             <Button
+                 android:id="@+id/button_send_denuncia"
+                 android:layout_width="125dp"
+                 android:layout_height="40dp"
+                 android:text="Enviar"
+                 android:textColor="#fff"
+                 android:textSize="16sp"
+                 android:layout_margin="32dp"
+                 android:layout_gravity="center_horizontal"
+                 android:background="@drawable/buttonshape_pos_cadastro"
+                 />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

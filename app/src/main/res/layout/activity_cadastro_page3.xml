@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_cadastro_page3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_above="@id/box_cadastro_3">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo_sem_nome"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/box_cadastro_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blackText"
+            android:text="Confirmação de email"
+            android:layout_gravity="center"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blackText"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:text="Um código foi enviado para o email inserido, digite o código baixo para confirmar seu email e finalizar seu cadastro"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/text_codigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:hint="Digite o Código"
+            android:maxLength="6"
+            android:textAlignment="center"
+            android:inputType="numberDecimal"
+            android:textColor="@color/colorTextDefaultRed"
+            android:background="@drawable/box_cadastro_codigo"/>
+
+        <Button
+            android:id="@+id/button_avanca3"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/buttonshape_pos_cadastro"
+            android:text="Avançar"
+            android:textColor="@color/colorTextDefaultWhite" />
+
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

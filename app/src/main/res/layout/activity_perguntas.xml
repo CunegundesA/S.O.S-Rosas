@@ -1,0 +1,2086 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTextDefaultWhite"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:src="@drawable/logo_sem_nome" />
+
+        <!---Pergunta 01-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta1"
+                app:layout_constraintTop_toTopOf="@id/pergunta1" />
+
+            <TextView
+                android:id="@+id/title_pergunta1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta1"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta1" />
+
+            <TextView
+                android:id="@+id/text_pergunta1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:justificationMode="inter_word"
+                android:text="Seu companheiro(a) te chantagea ou já chantageou?"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta1" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta1">
+
+                <RadioButton
+                    android:id="@+id/sim1"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao1"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 02-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta2"
+                app:layout_constraintTop_toTopOf="@id/pergunta2" />
+
+            <TextView
+                android:id="@+id/title_pergunta2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta2" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta2"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta2" />
+
+            <TextView
+                android:id="@+id/text_pergunta2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) já lhe ofendeu ou já te humilhou?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta2" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta2">
+
+                <RadioButton
+                    android:id="@+id/sim2"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao2"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 03-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta3"
+                app:layout_constraintTop_toTopOf="@id/pergunta3" />
+
+            <TextView
+                android:id="@+id/title_pergunta3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta3" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta3"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta3" />
+
+            <TextView
+                android:id="@+id/text_pergunta3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) sente ou já sentiu ciúmes excessivo de você?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta3" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta3">
+
+                <RadioButton
+                    android:id="@+id/sim3"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao3"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 04-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta4"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta4"
+                app:layout_constraintTop_toTopOf="@id/pergunta4" />
+
+            <TextView
+                android:id="@+id/title_pergunta4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta4" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta4"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta4"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta4" />
+
+            <TextView
+                android:id="@+id/text_pergunta4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) verifica seu celular ou controla suas redes sociais, a todo tempo quer saber com quem está ou o que faz?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta4" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta4">
+
+                <RadioButton
+                    android:id="@+id/sim4"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao4"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 05-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta5"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta5"
+                app:layout_constraintTop_toTopOf="@id/pergunta5" />
+
+            <TextView
+                android:id="@+id/title_pergunta5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta5" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta5"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta5"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta5" />
+
+            <TextView
+                android:id="@+id/text_pergunta5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) te afasta de amigos, parentes ou vizinhos?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta5" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta5">
+
+                <RadioButton
+                    android:id="@+id/sim5"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao5"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 06-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta6"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta6"
+                app:layout_constraintTop_toTopOf="@id/pergunta6" />
+
+            <TextView
+                android:id="@+id/title_pergunta6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta6" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta6"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta6" />
+
+            <TextView
+                android:id="@+id/text_pergunta6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) controla o tipo de roupa que você veste?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta6" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta6">
+
+                <RadioButton
+                    android:id="@+id/sim6"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao6"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 07-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta7"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta7"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta7"
+                app:layout_constraintTop_toTopOf="@id/pergunta7" />
+
+            <TextView
+                android:id="@+id/title_pergunta7"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta7" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta7"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta7"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta7" />
+
+            <TextView
+                android:id="@+id/text_pergunta7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) enquanto uma briga, aparentou ficar sem controle de suas ações?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta7" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta7">
+
+                <RadioButton
+                    android:id="@+id/sim7"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao7"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 08-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta8"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta8"
+                app:layout_constraintTop_toTopOf="@id/pergunta8" />
+
+            <TextView
+                android:id="@+id/title_pergunta8"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta8" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta8"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta8"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta8" />
+
+            <TextView
+                android:id="@+id/text_pergunta8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) faz críticas sobre seu corpo, exagera em seus defeitos em público ou privado?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta8" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta8">
+
+                <RadioButton
+                    android:id="@+id/sim8"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao8"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 09-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta9"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta9"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta9"
+                app:layout_constraintTop_toTopOf="@id/pergunta9" />
+
+            <TextView
+                android:id="@+id/title_pergunta9"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta9" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta9"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta9"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta9" />
+
+            <TextView
+                android:id="@+id/text_pergunta9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) te pressiona a ter relações sexuais recorrendo de manipulação ou a força?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta9" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta9">
+
+                <RadioButton
+                    android:id="@+id/sim9"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao9"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 10-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta10"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta10"
+                app:layout_constraintTop_toTopOf="@id/pergunta10" />
+
+            <TextView
+                android:id="@+id/title_pergunta10"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta10" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta10"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta10"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta10" />
+
+            <TextView
+                android:id="@+id/text_pergunta10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) já te agrediu por meio de puxões, empurrões, tapas ou beliscões?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta10" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta10">
+
+                <RadioButton
+                    android:id="@+id/sim10"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao10"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 11-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta11"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta11"
+                app:layout_constraintTop_toTopOf="@id/pergunta11" />
+
+            <TextView
+                android:id="@+id/title_pergunta11"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta11" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta11"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta11"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta11" />
+
+            <TextView
+                android:id="@+id/text_pergunta11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) já te ameaçou de morte?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta11" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta11">
+
+                <RadioButton
+                    android:id="@+id/sim11"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao11"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 12-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta12"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta12"
+                app:layout_constraintTop_toTopOf="@id/pergunta12" />
+
+            <TextView
+                android:id="@+id/title_pergunta12"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta12" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta12"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta12"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta12" />
+
+            <TextView
+                android:id="@+id/text_pergunta12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) te impede de trabalhar ou te obriga a cuidar da casa?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta12" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta12">
+
+                <RadioButton
+                    android:id="@+id/sim12"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao12"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 13-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta13"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta13"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta13"
+                app:layout_constraintTop_toTopOf="@id/pergunta13" />
+
+            <TextView
+                android:id="@+id/title_pergunta13"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta13" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta13"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta13"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta13" />
+
+            <TextView
+                android:id="@+id/text_pergunta13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) já obrigou você a usar álcool, drogas ou outras substâncias?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta13" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta13">
+
+                <RadioButton
+                    android:id="@+id/sim13"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao13"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 14-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta14"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta14"
+                app:layout_constraintTop_toTopOf="@id/pergunta14" />
+
+            <TextView
+                android:id="@+id/title_pergunta14"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta14" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta14"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta14"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta14" />
+
+            <TextView
+                android:id="@+id/text_pergunta14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) ele já disse ou diz que se você não for dele não será de mais ninguém?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta14" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta14">
+
+                <RadioButton
+                    android:id="@+id/sim14"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao14"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 15-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta15"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta15"
+                app:layout_constraintTop_toTopOf="@id/pergunta15" />
+
+            <TextView
+                android:id="@+id/title_pergunta15"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta15" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta15"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta15"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta15" />
+
+            <TextView
+                android:id="@+id/text_pergunta15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) nas tentativas de término de relacionamento, insistiu em ter mais uma chance ou te perseguiu?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta15" />
+
+            <RadioGroup
+                android:id="@+id/grup_button_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta15">
+
+                <RadioButton
+                    android:id="@+id/sim15"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao15"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 16-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta16"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta16"
+                app:layout_constraintTop_toTopOf="@id/pergunta16"/>
+
+            <TextView
+                android:id="@+id/title_pergunta16"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta16" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta16"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta16"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta16"/>
+
+            <TextView
+                android:id="@+id/text_pergunta16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) quando usa álcool ou drogas, se comporta de um jeito violento com você ou com outras pessoas?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta16"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta16">
+
+                <RadioButton
+                    android:id="@+id/sim16"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao16"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 17-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta17"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta17"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta17"
+                app:layout_constraintTop_toTopOf="@id/pergunta17"/>
+
+            <TextView
+                android:id="@+id/title_pergunta17"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta17" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta17"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta17"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta17"/>
+
+            <TextView
+                android:id="@+id/text_pergunta17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) controla seu dinheiro ou te obriga a reduzir gastos?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta17"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta17">
+
+                <RadioButton
+                    android:id="@+id/sim17"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao17"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 18-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta18"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta18"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta18"
+                app:layout_constraintTop_toTopOf="@id/pergunta18"/>
+
+            <TextView
+                android:id="@+id/title_pergunta18"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta18" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta18"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta18"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta18"/>
+
+            <TextView
+                android:id="@+id/text_pergunta18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) enquanto uma briga quebra ou joga seus objetos fora?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta18"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta18">
+
+                <RadioButton
+                    android:id="@+id/sim18"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao18"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 19-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta19"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta19"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta19"
+                app:layout_constraintTop_toTopOf="@id/pergunta19"/>
+
+            <TextView
+                android:id="@+id/title_pergunta19"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta19" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta19"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta19"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta19"/>
+
+            <TextView
+                android:id="@+id/text_pergunta19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) quando tem relações sexuais te impede ou já te impediu de usar métodos contraceptivos?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta19"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta19">
+
+                <RadioButton
+                    android:id="@+id/sim19"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao19"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 20-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta20"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta20"
+                app:layout_constraintTop_toTopOf="@id/pergunta20"/>
+
+            <TextView
+                android:id="@+id/title_pergunta20"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta20" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta20"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta20"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta20"/>
+
+            <TextView
+                android:id="@+id/text_pergunta20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) te manteve presa em casa, sem poder ter contato com pessoas de fora?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta20"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta20">
+
+                <RadioButton
+                    android:id="@+id/sim20"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao20"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 21-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta21"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta21"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta21"
+                app:layout_constraintTop_toTopOf="@id/pergunta21"/>
+
+            <TextView
+                android:id="@+id/title_pergunta21"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta21" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta21"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta21"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta21"/>
+
+            <TextView
+                android:id="@+id/text_pergunta21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) já te ameaçou ou agrediu com alguma arma ou objetos cortantes?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta21"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta21">
+
+                <RadioButton
+                    android:id="@+id/sim21"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao21"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 22-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta22"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta22"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta22"
+                app:layout_constraintTop_toTopOf="@id/pergunta22"/>
+
+            <TextView
+                android:id="@+id/title_pergunta22"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta22" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta22"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta22"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta22"/>
+
+            <TextView
+                android:id="@+id/text_pergunta22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) tem ou já teve antecedentes criminais?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta22"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta22">
+
+                <RadioButton
+                    android:id="@+id/sim22"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao22"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 23-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta23"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta23"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta23"
+                app:layout_constraintTop_toTopOf="@id/pergunta23"/>
+
+            <TextView
+                android:id="@+id/title_pergunta23"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta23" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta23"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta23"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta23"/>
+
+            <TextView
+                android:id="@+id/text_pergunta23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="As brigas e agressões estão ficando mais freguentes?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta23"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta23">
+
+                <RadioButton
+                    android:id="@+id/sim23"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao23"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 24-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta24"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta24"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta24"
+                app:layout_constraintTop_toTopOf="@id/pergunta24"/>
+
+            <TextView
+                android:id="@+id/title_pergunta24"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta24" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta24"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta24"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta24"/>
+
+            <TextView
+                android:id="@+id/text_pergunta24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Você já teve ou sentiu medo de está sozinha com seu companheiro(a)?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta24"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta24">
+
+                <RadioButton
+                    android:id="@+id/sim24"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao24"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!---Pergunta 25-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pergunta25"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta25"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/title_pergunta25"
+                app:layout_constraintTop_toTopOf="@id/pergunta25"/>
+
+            <TextView
+                android:id="@+id/title_pergunta25"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Pergunta"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pergunta25" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="@id/title_pergunta25"
+                app:layout_constraintLeft_toRightOf="@id/title_pergunta25"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_pergunta25"/>
+
+            <TextView
+                android:id="@+id/text_pergunta25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Seu companheiro(a) já ameaçou fazer algo com seus parentes e amigos, caso você o denuncie?"
+                android:textAlignment="center"
+                android:textColor="@color/colorRedFontQuestions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/title_pergunta25"/>
+
+            <RadioGroup
+                android:id="@+id/grup_button_25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/pergunta25">
+
+                <RadioButton
+                    android:id="@+id/sim25"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="42dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Sim"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/nao25"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/radio_button_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="Não"
+                    android:textColor="@drawable/text_color_selector_radiobutton"
+                    android:textSize="16sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/enviar_resposta"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/buttonshape_pos_cadastro"
+            android:text="Enviar Resposta"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>
+

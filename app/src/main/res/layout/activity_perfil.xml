@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.PerfilActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fundo_rosas_new"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/configuracao_perfil"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="left"
+                    app:tint="@color/colorTextDefaultRed"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/icon_configuracao" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/foto_perfil"
+                    android:layout_width="115dp"
+                    android:layout_height="103dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/do_utilizador" />
+
+                <Button
+                    android:id="@+id/button_remove_foto_perfil"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="120dp"
+                    android:visibility="gone"
+                    android:layout_alignLeft="@id/foto_perfil"
+                    android:text="X"
+                    android:textSize="18sp"
+                    android:background="@drawable/radio_button_cadastro_unselected"
+                    />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/text_nome_usuario_perfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Usuário"
+                        android:enabled="false"
+                        android:inputType="text"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/blackText"
+                        android:textSize="25sp" />
+
+                    <ImageView
+                        android:id="@+id/button_editar_nome_usuario"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/editar"
+                        app:tint="@color/blackText" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="Informações do usuário"
+                android:textColor="@color/blackText"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/seguidor"
+                    app:tint="@color/colorTextDefaultRed"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Dados pessoais"
+                    android:textColor="@color/colorTextDefaultRed"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/text_perfil_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="Nome"
+                android:textSize="16sp"
+                android:textColor="@color/blackText"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/text_perfil_cpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="CPF"
+                android:textColor="@color/blackText"
+                android:inputType="numberDecimal"/>
+
+            <EditText
+                android:id="@+id/text_perfil_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="RG"
+                android:textColor="@color/blackText"
+                android:inputType="numberDecimal"/>
+
+            <EditText
+                android:id="@+id/text_perfil_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="Data de nascimento"
+                android:textColor="@color/blackText"
+                android:inputType="date"/>
+
+            <EditText
+                android:id="@+id/text_perfil_celular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="Telefone/Celular"
+                android:textColor="@color/blackText"
+                android:inputType="phone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/endereco"
+                    app:tint="@color/colorTextDefaultRed"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:text="Endereço"
+                    android:textColor="@color/colorTextDefaultRed"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/text_perfil_cep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="CEP"
+                android:textColor="@color/blackText"
+                android:inputType="numberDecimal"/>
+
+            <EditText
+                android:id="@+id/text_perfil_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="Endereço"
+                android:textColor="@color/blackText"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/text_perfil_bairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="Bairro"
+                android:textColor="@color/blackText"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/text_perfil_numero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="Número"
+                android:textColor="@color/blackText"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/text_perfil_estado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="Estado"
+                android:textColor="@color/blackText"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/text_perfil_cidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/box_edit_contatos"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="16sp"
+                android:hint="Cidade"
+                android:textColor="@color/blackText"
+                android:inputType="text"/>
+
+
+            <Button
+                android:id="@+id/botao_editar_perfil"
+                android:layout_width="125dp"
+                android:layout_height="40dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="32dp"
+                android:text="Editar"
+                android:background="@drawable/buttonshape_pos_cadastro"
+                android:textColor="@color/colorTextDefaultWhite"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

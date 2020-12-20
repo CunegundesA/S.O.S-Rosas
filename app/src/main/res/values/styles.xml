@@ -1,0 +1,31 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorRedBaRTheme</item>
+        <item name="colorPrimaryDark">@color/colorRedBaRTheme</item>
+        <item name="colorAccent">@color/colorTextDefaultWhite</item>
+    </style>
+
+    <style name="StyleEditCadastro" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorTextDefaultRed</item>
+        <item name="colorPrimaryDark">@color/colorTextDefaultRed</item>
+        <item name="colorAccent">@color/colorTextDefaultRed</item>
+    </style>
+
+    <style name="StyleEditDefault" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorTextDefaultRed</item>
+        <item name="colorPrimaryDark">@color/colorTextDefaultRed</item>
+        <item name="colorAccent">@color/blackText</item>
+    </style>
+
+    <style name="StyleCalendar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorTextDefaultRed</item>
+        <item name="colorPrimaryDark">@color/colorTextDefaultRed</item>
+        <item name="colorAccent">@color/selectorRadioButton</item>
+    </style>
+
+</resources>

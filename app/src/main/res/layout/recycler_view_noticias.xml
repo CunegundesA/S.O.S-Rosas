@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_view_noticias"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="1dp"
+    android:elevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/box_load_noticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_noticia"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <ProgressBar
+            android:id="@+id/load_img_noticia"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:indeterminateTint="@color/colorTextDefaultRed"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="25dp"
+            android:background="@drawable/gradient_black_transparent"
+            android:layout_alignBottom="@id/img_noticia"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/autor_noticia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextDefaultWhite"
+                android:textSize="14sp"
+                android:textAlignment="textStart"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/data_noticia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextDefaultWhite"
+                android:textSize="14sp"
+                android:textAlignment="textEnd"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title_noticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/blackText"/>
+
+    <TextView
+        android:id="@+id/desc_noticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

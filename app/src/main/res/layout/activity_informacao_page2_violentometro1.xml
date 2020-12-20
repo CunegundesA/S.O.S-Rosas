@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTextDefaultWhite">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo_sem_nome"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/blackText"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:text="@string/violentometro_introducao"/>
+
+    <Button
+        android:id="@+id/botao_comecar_perguntas"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/buttonshape_pos_cadastro"
+        android:text="COMEÇAR"
+        android:textColor="@color/colorTextDefaultWhite"
+        android:textSize="16sp"
+        android:backgroundTint="@color/colorTextDefaultRed"/>
+
+</LinearLayout>

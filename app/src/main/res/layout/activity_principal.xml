@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.PrincipalActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_principal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.90" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/botao_navegacao_principal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorTextDefaultWhite"
+        app:elevation="24sp"
+        app:itemIconTint="@color/colorTextDefaultRed"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemTextColor="@color/colorTextDefaultRed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
+        app:menu="@menu/menu_navegar">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/botao_panico"
+            android:layout_gravity="center"
+            />
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

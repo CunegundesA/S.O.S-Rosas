@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorTextDefaultWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/logo_sem_nome"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informações do contato de emergência"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/colorTextDefaultRed"/>
+
+        <EditText
+            android:id="@+id/text_nome_contato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:hint="Nome"
+            android:inputType="text|textNoSuggestions"/>
+
+        <EditText
+            android:id="@+id/text_numero_contato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:hint="Celular"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/text_email_contato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress|textNoSuggestions"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:text="@string/text_add_contato"/>
+
+        <Button
+            android:id="@+id/botao_adicionar_contato"
+            android:layout_width="125dp"
+            android:layout_height="40dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"
+            android:text="Adicionar"
+            android:background="@drawable/buttonshape_pos_cadastro"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

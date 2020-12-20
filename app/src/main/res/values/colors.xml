@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorTextDefaultRed">#B00020</color>
+    <color name="colorTextDefaultWhite">#FFF</color>
+    <color name="blackText">#000000</color>
+    <color name="yellowColorText">#EDD706</color>
+    <color name="orangeColorText">#ED6A06</color>
+    <color name="greenColorText">#16AE05</color>
+    <color name="colorRedFontQuestions">#000000</color>
+    <color name="selectorRadioButton">#FF0051</color>
+    <color name="grayColor">#E4E3E3</color>
+    <color name="whiteBarNavegation">#EEEEEE</color>
+    <color name="colorRedBaRTheme">#95011D</color>
+    <color name="slideColorRed">#C90104</color>
+</resources>

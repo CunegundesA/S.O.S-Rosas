@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.CalendarioActivity">
+
+    <LinearLayout
+        android:id="@+id/head_opcoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_voltar_agenda"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="left"
+            android:background="@drawable/icon_voltar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/title_agenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/agenda_title"
+        app:layout_constraintTop_toBottomOf="@id/head_opcoes"/>
+
+    <LinearLayout
+        android:id="@+id/box_mes_ano"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/title_agenda">
+
+        <ImageView
+            android:id="@+id/mes_anterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/text_mes_ano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Mes, Ano"
+            android:textAlignment="center"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/mes_posterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_chevron_right_24"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/text_days_of_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/box_mes_ano">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dom"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/blackText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seg"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/blackText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ter"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/blackText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qua"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/blackText"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qui"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/blackText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sex"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/blackText"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sab"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColor="@color/blackText"/>
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/calendar_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:outlineSpotShadowColor="@color/blackText"
+        android:numColumns="7"
+        app:layout_constraintTop_toBottomOf="@id/text_days_of_week"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

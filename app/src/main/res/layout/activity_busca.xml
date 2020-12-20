@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTextDefaultWhite"
+    tools:context=".View.BuscaActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_busca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:background="@color/colorTextDefaultRed"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_utilizador_busca"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/do_utilizador"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/image_informacao"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_informacao"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/icon_busca_p"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toRightOf="@id/img_utilizador_busca"
+            app:layout_constraintRight_toLeftOf="@id/img_configuracao_busca"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/icon_busca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Busca"
+            android:textStyle="bold"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/image_informacao"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <View
+            android:id="@+id/underline_busca"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/whiteBarNavegation"
+            app:layout_constraintLeft_toLeftOf="@id/icon_busca"
+            app:layout_constraintRight_toRightOf="@id/icon_busca"
+            app:layout_constraintTop_toBottomOf="@id/icon_busca"/>
+
+        <ImageView
+            android:id="@+id/img_configuracao_busca"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/icon_configuracao"
+            app:layout_constraintLeft_toRightOf="@id/image_informacao"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_busca">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextDefaultWhite"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/frame_map"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextDefaultWhite"
+                />
+
+            <LinearLayout
+                android:id="@+id/open_box_dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="@color/colorTextDefaultRed">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Departamentos de polícia"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorTextDefaultWhite"/>
+
+                <ImageView
+                    android:id="@+id/seta_dip"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/seta_baixo"
+                    app:tint="@color/colorTextDefaultWhite" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/box_dip"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/dip_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_02"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_03"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_04"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_05"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_06"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_07"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_08"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_09"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_13"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="17° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_18"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_19"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="19° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_21"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_22"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="22° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_23"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_24"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_25"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_26"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="26° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_27"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="27° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_28"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="28° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_29"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="29° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/dip_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30° DIP - Distrito Integrado de Polícia"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextDefaultWhite" />
+
+            <LinearLayout
+                android:id="@+id/open_box_deccm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="@color/colorTextDefaultRed">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="DECCM"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorTextDefaultWhite"/>
+
+                <ImageView
+                    android:id="@+id/seta_deccm"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/seta_baixo"
+                    app:tint="@color/colorTextDefaultWhite" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/box_deccm"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/deccm_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DECCM - Delegacia Especializada Em Crimes Contra A Mulher/Anexo Norte"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/deccm_02"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DECCM - Delegacia da Mulher"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/deccm_03"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DECCM - Delegacia Especializada Em Crimes Contra A Mulher/Anexo Sul"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextDefaultWhite" />
+
+            <!---Hospitais-->
+            <LinearLayout
+                android:id="@+id/open_box_hospital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="@color/colorTextDefaultRed">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hospitais"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorTextDefaultWhite"/>
+
+                <ImageView
+                    android:id="@+id/seta_hospital"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/seta_baixo"
+                    app:tint="@color/colorTextDefaultWhite" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/box_hospital"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/hospital_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hospital e Pronto Socorro 28 de Agosto"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/hospital_02"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hospital Delphina Rinaldi Abdel Aziz"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/hospital_03"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hospital e Pronto Socorro Dr. João Lúcio Pereira Machado"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grayColor" />
+
+                <LinearLayout
+                    android:id="@+id/hospital_04"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hospital e Pronto Socorro Dr Aristóteles Platão Bezerra de Araújo"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/blackText"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextDefaultWhite" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_cadastro_page2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/box_logo_rosa_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_above="@id/box_cadastro_2">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo_sem_nome"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/box_cadastro_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preencha os dados para se cadastrar no aplicativo"
+            android:textAlignment="center"
+            android:textColor="@color/blackText"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/text_cep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CEP"
+            android:maxLength="8"
+            android:inputType="numberDecimal"
+            android:textColor="@color/colorTextDefaultRed" />
+
+        <EditText
+            android:id="@+id/text_endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Endereço"
+            android:inputType="text|textNoSuggestions"
+            android:textColor="@color/colorTextDefaultRed" />
+
+        <EditText
+            android:id="@+id/text_bairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bairro"
+            android:inputType="text|textNoSuggestions"
+            android:textColor="@color/colorTextDefaultRed" />
+
+        <EditText
+            android:id="@+id/text_numero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número"
+            android:inputType="text|textNoSuggestions"
+            android:textColor="@color/colorTextDefaultRed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/text_estado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:hint="Estado"
+                android:inputType="text|textNoSuggestions"
+                android:textColor="@color/colorTextDefaultRed" />
+
+            <EditText
+                android:id="@+id/text_cidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Cidade"
+                android:inputType="text|textNoSuggestions"
+                android:textColor="@color/colorTextDefaultRed" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Termos de uso"
+            android:textColor="@color/blackText"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text_termos_uso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Políticas de privacidade | Termos de uso"
+            android:textColor="@color/blackText"
+            android:textSize="12sp" />
+
+        <CheckBox
+            android:id="@+id/check_termos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Li e aceito os termos de uso e as políticas de privacidade"
+            android:textColor="@color/blackText"
+            android:textSize="12sp"
+            android:buttonTint="@color/colorTextDefaultRed"/>
+
+        <Button
+            android:id="@+id/button_avanca2"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buttonshape_pos_cadastro"
+            android:text="Avançar"
+            android:textColor="@color/colorTextDefaultWhite" />
+
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTextDefaultWhite"
+    tools:context=".View.InformacaoActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_informacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextDefaultRed"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_utilizador_informacao"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/do_utilizador"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/image_informacao"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_informacao"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/icon_infop"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/img_utilizador_informacao"
+            app:layout_constraintRight_toLeftOf="@id/img_configuracao_informacao"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/icon_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:text="Informações"
+            android:textSize="18sp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/icon_violentometro"
+            app:layout_constraintTop_toBottomOf="@id/image_informacao"/>
+
+        <View
+            android:id="@+id/underline_informacoes"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/whiteBarNavegation"
+            app:layout_constraintLeft_toLeftOf="@id/icon_info"
+            app:layout_constraintRight_toRightOf="@id/icon_info"
+            app:layout_constraintTop_toBottomOf="@id/icon_info"/>
+
+        <TextView
+            android:id="@+id/icon_violentometro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Violentômetro"
+            android:textSize="18sp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:textColor="@color/colorTextDefaultWhite"
+            app:layout_constraintLeft_toRightOf="@id/icon_info"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_informacao" />
+
+        <View
+            android:id="@+id/underline_violentometro"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:visibility="invisible"
+            android:layout_marginBottom="8dp"
+            android:background="@color/whiteBarNavegation"
+            app:layout_constraintLeft_toLeftOf="@id/icon_violentometro"
+            app:layout_constraintRight_toRightOf="@id/icon_violentometro"
+            app:layout_constraintTop_toBottomOf="@id/icon_violentometro" />
+
+        <ImageView
+            android:id="@+id/img_configuracao_informacao"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/icon_configuracao"
+            app:layout_constraintLeft_toRightOf="@id/image_informacao"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/frame_informacao"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorTextDefaultWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_informacoes" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

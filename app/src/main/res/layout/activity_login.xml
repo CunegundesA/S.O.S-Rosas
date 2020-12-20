@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="@drawable/tela_fundo_login_new"
+    android:orientation="vertical"
+    tools:context=".View.LoginActivit">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_official"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/title_welcome_login"/>
+
+    <TextView
+        android:id="@+id/title_welcome_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/bem_vindo"
+        android:textAlignment="center"
+        android:textColor="@color/blackText"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_email_login"/>
+
+    <EditText
+        android:id="@+id/edit_text_email_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/blackText"
+        app:layout_constraintTop_toBottomOf="@id/title_welcome_login"
+        app:layout_constraintLeft_toLeftOf="@id/title_welcome_login"
+        app:layout_constraintRight_toRightOf="@id/title_welcome_login"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_password_login"/>
+
+    <EditText
+        android:id="@+id/edit_text_password_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColor="@color/blackText"
+        android:textColorLink="@color/blackText"
+        app:layout_constraintBottom_toTopOf="@id/lose_password"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_email_login"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_email_login"
+        app:layout_constraintRight_toRightOf="@id/edit_text_email_login" />
+
+    <TextView
+        android:id="@+id/lose_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/esqueceu_senha"
+        android:textColor="@color/blackText"
+        app:layout_constraintBottom_toTopOf="@id/button_enter"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_password_login"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_password_login"
+        app:layout_constraintRight_toRightOf="@id/edit_text_password_login" />
+
+    <Button
+        android:id="@+id/button_enter"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonshape_pos_cadastro"
+        android:text="Entrar"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorTextDefaultWhite"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/text_or"
+        app:layout_constraintTop_toBottomOf="@id/lose_password"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_password_login"
+        app:layout_constraintRight_toRightOf="@id/edit_text_password_login" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/blackText"
+        app:layout_constraintBottom_toBottomOf="@id/text_or"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_password_login"
+        app:layout_constraintRight_toLeftOf="@id/text_or"
+        app:layout_constraintTop_toTopOf="@id/text_or" />
+
+    <TextView
+        android:id="@+id/text_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="OU"
+        android:textColor="@color/blackText"
+        app:layout_constraintBottom_toTopOf="@id/text_cadastro"
+        app:layout_constraintTop_toBottomOf="@id/button_enter"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/view1"
+        app:layout_constraintRight_toLeftOf="@id/view2" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blackText"
+        app:layout_constraintBottom_toBottomOf="@id/text_or"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/text_or"
+        app:layout_constraintRight_toRightOf="@id/edit_text_password_login"
+        app:layout_constraintTop_toTopOf="@id/text_or" />
+
+    <TextView
+        android:id="@+id/text_cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastre-se aqui"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/blackText"
+        app:layout_constraintBottom_toTopOf="@id/img_facebook"
+        app:layout_constraintTop_toBottomOf="@id/text_or"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_password_login"
+        app:layout_constraintRight_toRightOf="@id/edit_text_password_login" />
+
+    <ImageView
+        android:id="@+id/img_facebook"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/facebook"
+        app:layout_constraintBottom_toTopOf="@id/text_termos"
+        app:layout_constraintTop_toBottomOf="@id/text_cadastro"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_password_login"
+        app:layout_constraintRight_toLeftOf="@id/img_gmail" />
+
+    <ImageView
+        android:id="@+id/img_gmail"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/gmail"
+        app:layout_constraintLeft_toRightOf="@id/img_facebook"
+        app:layout_constraintRight_toRightOf="@id/edit_text_password_login"
+        app:layout_constraintTop_toTopOf="@id/img_facebook" />
+
+    <TextView
+        android:id="@+id/text_termos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Políticas de privacidade | Termos de uso"
+        android:textColor="@color/blackText"
+        android:textSize="10sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_facebook"
+        app:layout_constraintLeft_toLeftOf="@id/edit_text_password_login"
+        app:layout_constraintRight_toRightOf="@id/edit_text_password_login" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

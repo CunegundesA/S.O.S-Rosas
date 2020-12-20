@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/fundo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fundo_rosas_new"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/configuracao_main"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_gravity="left"
+                    android:src="@drawable/icon_configuracao"
+                    app:tint="@color/colorTextDefaultRed" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/foto_main"
+                    android:layout_width="115dp"
+                    android:layout_height="103dp"
+                    app:civ_circle_background_color="@color/colorTextDefaultWhite"
+                    android:src="@drawable/do_utilizador"
+                    android:layout_gravity="center_horizontal"/>
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_user"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:indeterminateTint="@color/colorTextDefaultRed"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_nome_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Usuário"
+                    android:textColor="@color/blackText"
+                    android:textSize="25sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/fundo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/foto" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/oqfazer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="TIPOS DE VIOLÊNCIA"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_margin="8dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_violencia_fisica"
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="10dp"
+                            app:cardPreventCornerOverlap="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/violencia_fisica"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Violência Física"
+
+                                    android:textSize="16sp"
+                                    android:textColor="@color/blackText"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_violencia_psicologica"
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginStart="16dp"
+                            app:cardPreventCornerOverlap="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/violencia_psicologica" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Violência Psicológica"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/blackText"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_violencia_sexual"
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginStart="16dp"
+                            app:cardPreventCornerOverlap="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/violencia_sexual"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Violência Sexual"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/blackText"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_violencia_patrimonial"
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginStart="16dp"
+                            app:cardPreventCornerOverlap="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/violencia_patrimonial"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Violência Patrimonial"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/blackText"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_violencia_moral"
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardPreventCornerOverlap="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/violencia_moral"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Violência Moral"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/blackText"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/psm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:background="@color/colorTextDefaultRed"
+                android:gravity="center"
+                android:text="PARA SABER MAIS"
+                android:textColor="@color/colorTextDefaultWhite"/>
+            
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_noticias_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

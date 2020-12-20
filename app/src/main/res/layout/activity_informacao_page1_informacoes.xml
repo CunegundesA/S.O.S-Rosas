@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTextDefaultWhite"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextDefaultWhite"
+            android:padding="16dp"
+            android:textStyle="bold"
+            android:justificationMode="inter_word"
+            android:text="@string/text_informacoes_trecho"
+            android:textColor="@color/blackText"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:text="O que é a violência contra a mulher?"
+            android:background="@color/colorTextDefaultRed"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextDefaultWhite"
+            android:justificationMode="inter_word"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            android:text="@string/text_informacoes_text01"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:text="Tipos de violência contra a mulher"
+            android:background="@color/colorTextDefaultRed"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextDefaultWhite"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:text="@string/text_informacao_lei"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+        <LinearLayout
+            android:id="@+id/box_violencia_fisica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Violência física"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_violencia_fisica"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:rotationX="360"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_violencia_fisica"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:paddingTop="8dp"
+            android:justificationMode="inter_word"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="@string/text_view_violencia_fisica"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/box_violencia_psicologica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Violência psicológica"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_violencia_psicologica"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_violencia_psicologica"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_view_violencia_psicologica"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_violencia_sexual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Violência sexual"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_violencia_sexual"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_violencia_sexual"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_view_violencia_sexual"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_violencia_patrimonial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Violência patrimonial"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_violencia_patrimonial"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_violencia_patrimonial"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_view_violencia_patrimonial"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_violencia_moral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Violência moral"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_violencia_moral"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_violencia_moral"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_view_violencia_moral"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:text="CICLO DE VIOLÊNCIA"
+            android:background="@color/colorTextDefaultRed"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:src="@drawable/clico_violencia"/>
+
+        <TextView
+            android:id="@+id/text_ciclo_violencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:justificationMode="inter_word"
+            android:textSize="16sp"
+            android:text="@string/text_ciclo_violencia"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:text="MITOS VS REALIDADE"
+            android:background="@color/colorTextDefaultRed"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_mito01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="O consumo de drogas é que faz com que seja violento(a)"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_mito01"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_mito01"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_mito01"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_mito02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Só as mulheres de meios sociais desfavorecidos sofrem de violência doméstica"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_mito02"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_mito02"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_mito02"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_mito03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Quanto mais me bates mais gosto de ti. Algumas mulheres gostam de apanhar: são masoquistas."
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_mito03"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_mito03"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_mito03"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_mito04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Mulheres fortes e independentes livram-se facilmente da violência"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_mito04"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_mito04"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_mito04"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_mito05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="A violência nos casais homoafetivos é mútua"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_mito05"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_mito05"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_mito05"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_mito06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Uma bofetada não magoa ninguém"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_mito06"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_mito06"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_mito06"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <LinearLayout
+            android:id="@+id/box_mito07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/colorTextDefaultWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Os filhos não são afetados pela violência contra a mãe"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorTextDefaultRed"/>
+
+            <ImageView
+                android:id="@+id/seta_mito07"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/seta_baixo"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_box_mito07"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/blackText"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/text_mito07"
+            android:background="@color/colorTextDefaultWhite"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackText"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:text="COMO DENUNCIAR E PROCURAR AJUDA EM CASO DE VIOLÊNCIA"
+            android:background="@color/colorTextDefaultRed"/>
+
+        <TextView
+            android:id="@+id/text_informacoes_denuncia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:text="@string/text_denuncia"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

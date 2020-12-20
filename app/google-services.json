@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "756797369333",
+    "firebase_url": "https://sos-rosas-f5579.firebaseio.com",
+    "project_id": "sos-rosas-f5579",
+    "storage_bucket": "sos-rosas-f5579.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756797369333:android:9f6264d58ba1ea94d88ebc",
+        "android_client_info": {
+          "package_name": "com.example.sosrosas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756797369333-g34ii1suta3gua0np8iqu75mr9i7ncar.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sosrosas",
+            "certificate_hash": "2d5fbb6bf05e996bd2861af66b628696e9ce502b"
+          }
+        },
+        {
+          "client_id": "756797369333-s4t0k9u8a95bf2o0jhmaji5nn5e1lr0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkOhq6c50_U5kymQF6DJKef2w2TAQV2M0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756797369333-s4t0k9u8a95bf2o0jhmaji5nn5e1lr0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

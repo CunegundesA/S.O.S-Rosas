@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_vertical"
+    tools:context=".View.ResultadoViolentometroActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTextDefaultWhite"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/logo_sem_nome"
+                android:layout_gravity="center"
+                android:layout_margin="16dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/img_violentometro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="390dp"
+                    android:src="@drawable/violentometro"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/text_title_result"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/img_violentometro"
+                    app:layout_constraintLeft_toRightOf="@id/img_violentometro"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/yellowColorText"
+                    android:text="CUIDADO!\n A violência está presente"/>
+
+                <TextView
+                    android:id="@+id/text_result"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/text_title_result"
+                    app:layout_constraintLeft_toRightOf="@id/img_violentometro"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/blackText"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

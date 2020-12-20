@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recycleview_contatosajuda"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="1dp"
+    android:elevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/text_contato_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textSize="16sp"
+            android:textColor="@color/colorTextDefaultRed"
+            android:gravity="center_vertical|left"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/button_excluir_contato"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/icon_lixeira"
+            android:textColor="@color/colorTextDefaultRed"
+            />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

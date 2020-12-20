@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/icon_home"
+        android:title="●"
+        />
+
+
+    <item
+        android:id="@+id/nav_informacao"
+        android:icon="@drawable/icon_info"
+        android:title="●"
+        />
+
+    <item
+        android:id="@+id/nav_rosa"
+        android:icon="@drawable/botao_panico"
+        android:title="●" />
+
+    <item
+        android:id="@+id/nav_busca"
+        android:icon="@drawable/icon_busca_p"
+        android:title="●"
+        />
+
+    <item
+        android:id="@+id/nav_denuncia"
+        android:icon="@drawable/icon_denuncia"
+        android:title="●"
+        />
+</menu>

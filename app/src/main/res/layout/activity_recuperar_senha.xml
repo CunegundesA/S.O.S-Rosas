@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tela_fundo_login_new"
+    tools:context=".View.RecuperarSenhaActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/box_recuperar_senha"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo_sem_nome"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/box_recuperar_senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextDefaultRed"
+            android:layout_gravity="center_horizontal"
+            android:text="Recuperação de senha" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Insira seu email aqui para recuperar sua senha, será enviado um email para sua caixa de email com o link para você poder alterar sua senha."
+            android:textColor="@color/colorTextDefaultRed"
+            android:textSize="16sp"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/text_email_recuperar_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:hint="Email"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/box_edit_contatos"/>
+
+        <Button
+            android:id="@+id/button_recuperar_senha"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/colorTextDefaultWhite"
+            android:text="Enviar"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/buttonshape_pos_cadastro" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
