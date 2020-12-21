@@ -54,7 +54,7 @@ class MainActivity : Fragment(), View.OnClickListener, RecyclerViewNoticiasAdapt
     private val database = FirebaseDatabase.getInstance()
     private val storage = FirebaseStorage.getInstance()
     private lateinit var mConfiguracaoNext : PrincipalListeners
-    private val API_KEY = "SUA_API_KEY"
+    private val API_KEY = "1677fd8b559b47b6b77df2373189880e"
     private var listNoticias = ArrayList<Article>()
     private lateinit var mRecyclerViewNoticiasAdapter: RecyclerViewNoticiasAdapter
     private val fragmentAtual = this
