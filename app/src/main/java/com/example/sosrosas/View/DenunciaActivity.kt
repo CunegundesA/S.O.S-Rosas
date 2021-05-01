@@ -1,7 +1,9 @@
 package com.example.sosrosas.View
 
 import android.app.Activity
+import android.content.Context
 import android.graphics.Typeface
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,6 +25,8 @@ import com.example.sosrosas.ViewModel.ContatosViewModel
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_denuncia.*
 import kotlinx.android.synthetic.main.activity_denuncia.view.*
@@ -40,6 +44,7 @@ class DenunciaActivity : Fragment(), DenunciasListeners, View.OnClickListener {
     private lateinit var mConfiguracaoNext: PrincipalListeners
     private val auth = FirebaseAuth.getInstance()
     private val storage = FirebaseStorage.getInstance()
+    private var isBackFragmentActived = false
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,21 +92,25 @@ class DenunciaActivity : Fragment(), DenunciasListeners, View.OnClickListener {
 
     //Vai para a pagina de Add contato
     override fun goPageAddContato() {
+        isBackFragmentActived = true
         childFragmentManager.beginTransaction().replace(R.id.frame_denuncia, pageAddContato).commit()
     }
 
     //Add um contato e vai para a pagina de contato
     override fun goPageContato() {
+        isBackFragmentActived = false
         childFragmentManager.beginTransaction().replace(R.id.frame_denuncia, pageContato).commit()
     }
 
     // Sai da pagina de informacoes de contato e vai para a pagina de contato
     override fun goPageContatoExitInformacao() {
+        isBackFragmentActived = false
         childFragmentManager.beginTransaction().replace(R.id.frame_denuncia, pageContato).commit()
     }
 
     //Vai para a pagina de informações do contato
     override fun goPageInformacoes(contatoAjuda: ContatoAjuda) {
+        isBackFragmentActived = true
         val pageInformacoesContato = InformacoesContatoFragment(contatoAjuda)
         pageInformacoesContato.setListener(this)
         childFragmentManager.beginTransaction().replace(R.id.frame_denuncia, pageInformacoesContato)
@@ -111,6 +120,7 @@ class DenunciaActivity : Fragment(), DenunciasListeners, View.OnClickListener {
     override fun onClick(view: View) {
         val id = view.id
         if (id == R.id.icon_contatos) {
+            isBackFragmentActived = false
             childFragmentManager.beginTransaction().replace(R.id.frame_denuncia, pageContato)
                 .commit()
            image_denuncia.setImageResource(R.drawable.contatosp)
@@ -119,6 +129,7 @@ class DenunciaActivity : Fragment(), DenunciasListeners, View.OnClickListener {
             icon_contatos.typeface = Typeface.DEFAULT_BOLD
             icon_megafone.typeface = Typeface.DEFAULT
         } else if (id == R.id.icon_megafone) {
+            isBackFragmentActived = false
             childFragmentManager.beginTransaction().replace(R.id.frame_denuncia, pageDenuncia)
                 .commit()
             image_denuncia.setImageResource(R.drawable.icon_denunciap)
@@ -128,8 +139,10 @@ class DenunciaActivity : Fragment(), DenunciasListeners, View.OnClickListener {
             icon_megafone.typeface = Typeface.DEFAULT_BOLD
 
         } else if (id == R.id.img_configuracao_denuncia) {
+            isBackFragmentActived = false
             mConfiguracaoNext.goConfiguration()
         } else if (id == R.id.img_utilizador_denuncia){
+            isBackFragmentActived = false
             mConfiguracaoNext.goPerfil()
         }
     }
@@ -143,18 +156,45 @@ class DenunciaActivity : Fragment(), DenunciasListeners, View.OnClickListener {
             override fun onComplete(task: Task<Uri>) {
 
                 if (task.isSuccessful) {
-                    val url = task.result.toString()
+                    try {
+                        val url = task.result.toString()
 
-                    Glide.with(context!!).load(url).into(img_utilizador_denuncia)
-
+                        Glide.with(context!!).load(url).into(img_utilizador_denuncia)
+                    }catch(e : NullPointerException){}
                 }
             }
         })
     }
 
+    private fun verificationConnectionWithInternet() : Boolean{
+        val conectInternet = activity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conectInternet.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true
+        }else{
+            return false
+        }
+    }
+
+    fun goBackFragmentContatosPressed(){
+        if(isBackFragmentActived){
+            isBackFragmentActived = false
+            childFragmentManager.beginTransaction().replace(R.id.frame_denuncia, pageContato).commit()
+        }
+    }
+
+    fun isBackFragmentActived() : Boolean{
+        return isBackFragmentActived
+    }
+
     override fun onStart() {
         super.onStart()
-        downloadPhotoUser()
+        if(verificationConnectionWithInternet()) {
+            try {
+                downloadPhotoUser()
+            }catch(e : NullPointerException){}
+        }
     }
 
 }

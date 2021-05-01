@@ -2,7 +2,9 @@ package com.example.sosrosas.View
 
 import android.animation.ValueAnimator
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -267,16 +269,33 @@ class BuscaActivity : Fragment(), View.OnClickListener {
             override fun onComplete(task: Task<Uri>) {
 
                 if (task.isSuccessful) {
-                    val url = task.result.toString()
-                    Glide.with(context!!).load(url).into(img_utilizador_busca)
+                    try {
+                        val url = task.result.toString()
+                        Glide.with(context!!).load(url).into(img_utilizador_busca)
+                    }catch(e : NullPointerException){}
                 }
             }
         })
     }
 
+    private fun verificationConnectionWithInternet() : Boolean{
+        val conectInternet = activity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conectInternet.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true
+        }else{
+            return false
+        }
+    }
+
     override fun onStart() {
         super.onStart()
-        downloadPhotoUser()
+        if(verificationConnectionWithInternet()) {
+            try {
+                downloadPhotoUser()
+            }catch (e : NullPointerException){}
+        }
     }
 
 }

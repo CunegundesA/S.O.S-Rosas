@@ -44,6 +44,4 @@ class AgendaSharedPreferences(context: Context)  {
         val listArrayDates = arrayJson.toString()
         SharedPreferences.edit().putString(email, listArrayDates).apply()
     }
-
-
 }

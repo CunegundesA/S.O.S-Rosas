@@ -1,8 +1,13 @@
 package com.example.sosrosas.View
 
+import android.app.Dialog
 import android.app.DownloadManager
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
@@ -25,6 +30,7 @@ import com.example.sosrosas.Model.Usuario
 import com.example.sosrosas.R
 import com.example.sosrosas.ViewModel.CadastroViewModel
 import com.example.sosrosas.ViewModel.SharedPreferences
+import com.example.sosrosas.Common.Environment.Companion
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -33,7 +39,9 @@ import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.android.synthetic.main.activity_cadastro_page1.*
 import kotlinx.android.synthetic.main.activity_cadastro_page2.*
 import kotlinx.android.synthetic.main.activity_cadastro_page3.*
+import kotlinx.android.synthetic.main.box_erro_conection_internet.*
 import java.io.File
+import java.text.SimpleDateFormat
 import java.util.*
 import javax.mail.*
 import javax.mail.internet.InternetAddress
@@ -53,6 +61,7 @@ class CadastroActivity : AppCompatActivity(), CadastroListeners, View.OnTouchLis
     private var codigoConfirmacao = 0
     private lateinit var drawble: BitmapDrawable
     private var isImageSet = false
+    private lateinit var passwordUser: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -77,6 +86,17 @@ class CadastroActivity : AppCompatActivity(), CadastroListeners, View.OnTouchLis
         mSharedPreferences = SharedPreferences(this)
     }
 
+    private fun verificationConnectionWithInternet() : Boolean{
+        val conectInternet = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conectInternet.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true
+        }else{
+            return false
+        }
+    }
+
     override fun goPage2(activedImage: Boolean) {
         isImageSet = activedImage
         drawble = image_cadastro_usuario.drawable as BitmapDrawable
@@ -93,7 +113,7 @@ class CadastroActivity : AppCompatActivity(), CadastroListeners, View.OnTouchLis
         mUsuario.nome = name
         mUsuario.nomeUsuario = nameUser
         mUsuario.email = email
-        mUsuario.senha = password
+        passwordUser = password
         mUsuario.senhaFalsa = fakePasseord
         mUsuario.cpf = cpf
         mUsuario.rg = rg
@@ -118,7 +138,25 @@ class CadastroActivity : AppCompatActivity(), CadastroListeners, View.OnTouchLis
         mUsuario.cidade = cidade
         mUsuario.estado = estado
 
-        sendEmail()
+        if(verificationConnectionWithInternet()) {
+            Thread(
+                Runnable {
+            sendEmail()
+                    }
+            ).start()
+        }else{
+            val dialog = Dialog(applicationContext)
+            dialog.setContentView(R.layout.box_erro_conection_internet)
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.button_ok_error_conection_internet.setOnClickListener(object: View.OnClickListener{
+                override fun onClick(p0: View?) {
+                    dialog.dismiss()
+                }
+
+            })
+            dialog.show()
+        }
+
         cadastro_pager.setCurrentItem(2)
         cadastro_pager.setOnTouchListener(null)
     }
@@ -127,20 +165,22 @@ class CadastroActivity : AppCompatActivity(), CadastroListeners, View.OnTouchLis
         val codigo = text_codigo.text.toString()
 
         if(codigoConfirmacao == codigo.toInt()) {
-            mCadastro.createLoginUser(mUsuario)
-            auth.signInWithEmailAndPassword(mUsuario.email, mUsuario.senha).addOnCompleteListener(this, OnCompleteListener {
-                if(it.isSuccessful){
-                    if(isImageSet) {
-                        mCadastro.savePhotoUser(drawble)
+            Thread(Runnable {
+                mCadastro.createLoginUser(mUsuario, passwordUser)
+                auth.signInWithEmailAndPassword(mUsuario.email, passwordUser).addOnCompleteListener(this, OnCompleteListener {
+                    if(it.isSuccessful){
+                        if(isImageSet) {
+                            mCadastro.savePhotoUser(drawble)
+                        }
+                        mCadastro.save(mUsuario)
+                        mSharedPreferences.savePasswordKeys(mUsuario.email, mUsuario.senhaFalsa)
+                        startActivity(Intent(application, PosCadastroActivity::class.java))
+                        finish()
+                    }else{
+                        ErroNotification().getErroNotification(this,it.exception.toString())
                     }
-                    mCadastro.save(mUsuario)
-                    mSharedPreferences.savePasswordKeys(mUsuario.email, mUsuario.senhaFalsa)
-                    startActivity(Intent(application, PosCadastroActivity::class.java))
-                    finish()
-                }else{
-                    ErroNotification().getErroNotification(this,it.exception.toString())
-                }
-            } )
+                })
+            }).start()
         }else{
             Toast.makeText(applicationContext, "Codigo invalido!", Toast.LENGTH_SHORT).show()
         }
@@ -157,12 +197,12 @@ class CadastroActivity : AppCompatActivity(), CadastroListeners, View.OnTouchLis
 
         val session: Session = Session.getInstance(props, object : Authenticator() {
             override fun getPasswordAuthentication(): PasswordAuthentication {
-                return PasswordAuthentication("SEU_EMAIL", "SUA_SENHA")
+                return PasswordAuthentication(com.example.sosrosas.Common.Environment.USER_EMAIL, com.example.sosrosas.Common.Environment.USER_PASSWORD)
             }
         })
 
         val msg: Message = MimeMessage(session)
-        msg.setFrom(InternetAddress("EMAIL", false))
+        msg.setFrom(InternetAddress(com.example.sosrosas.Common.Environment.USER_EMAIL, false))
         msg.setHeader("Content-Type", "text/html")
         msg.setRecipients(Message.RecipientType.TO,
             InternetAddress.parse(mUsuario.email))
@@ -240,12 +280,10 @@ class CadastroActivity : AppCompatActivity(), CadastroListeners, View.OnTouchLis
     }
 
     private class sendMenseger() : AsyncTask<Message, String, String>() {
-
         override fun doInBackground(vararg message: Message?): String {
             Transport.send(message[0])
             return "Sucess"
         }
-
     }
 
     override fun onTouch(p0: View, p1: MotionEvent): Boolean {
