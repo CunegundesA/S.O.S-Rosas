@@ -24,6 +24,10 @@ class SharedPreferences(context: Context) {
         }
     }
 
+    fun clearPasswords(){
+        SharedPreferences.edit().clear()
+    }
+
     fun getStoreString(key: String) : String {
         return SharedPreferences.getString(key, "") ?: ""
     }

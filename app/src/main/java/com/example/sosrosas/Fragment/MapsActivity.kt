@@ -2,10 +2,13 @@ package com.example.sosrosas.Fragment
 
 import android.Manifest
 import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.location.Criteria
 import android.location.Geocoder
@@ -35,6 +38,8 @@ import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.box_erro_location.*
+import kotlinx.android.synthetic.main.box_main_violencia_fisica.*
 
 class MapsActivity : Fragment(), OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
     GoogleApiClient.OnConnectionFailedListener {
@@ -295,9 +300,41 @@ class MapsActivity : Fragment(), OnMapReadyCallback, GoogleApiClient.ConnectionC
                 arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION,
                     android.Manifest.permission.ACCESS_COARSE_LOCATION), 1)
         }
-        myLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient)
-        val myLatLng = LatLng(myLocation.latitude, myLocation.longitude)
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(myLatLng))
+
+        val isLocationActive = mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+
+        if(isLocationActive) {
+            try {
+                myLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient)
+                val myLatLng = LatLng(myLocation.latitude, myLocation.longitude)
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(myLatLng))
+            }catch (e: NullPointerException){
+                val dialog = Dialog(context!!)
+                dialog.setContentView(R.layout.box_erro_location)
+                dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                dialog.text_msm_erro1.visibility = View.VISIBLE
+                dialog.button_ok_error_location.setOnClickListener(object: View.OnClickListener{
+                    override fun onClick(p0: View?) {
+                        dialog.dismiss()
+                    }
+                })
+                dialog.show()
+                val myLatLng = LatLng(-3.0443101,-60.1071934)
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(myLatLng))
+            }
+        }else{
+            val dialog = Dialog(context!!)
+            dialog.setContentView(R.layout.box_erro_location)
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.button_ok_error_location.setOnClickListener(object: View.OnClickListener{
+                override fun onClick(p0: View?) {
+                    dialog.dismiss()
+                }
+            })
+            dialog.show()
+            val myLatLng = LatLng(-3.0443101,-60.1071934)
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(myLatLng))
+        }
     }
 
     //Hospitais

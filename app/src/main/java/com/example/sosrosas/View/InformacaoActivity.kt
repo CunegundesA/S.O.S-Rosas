@@ -1,8 +1,10 @@
 package com.example.sosrosas.View
 
 import android.app.Activity
+import android.content.Context
 import android.graphics.Paint
 import android.graphics.Typeface
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -30,6 +32,7 @@ class InformacaoActivity : Fragment(), View.OnClickListener, ViolentometroListen
     private lateinit var mConfiguracaoNext : PrincipalListeners
     private val auth = FirebaseAuth.getInstance()
     private val storage = FirebaseStorage.getInstance()
+    private var isBackFragmentActived = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,6 +71,7 @@ class InformacaoActivity : Fragment(), View.OnClickListener, ViolentometroListen
         val id = view.id
 
         if (id == R.id.icon_info) {
+            isBackFragmentActived = false
             childFragmentManager.beginTransaction().replace(R.id.frame_informacao, pageInformacoes).commit()
             image_informacao.setImageResource(R.drawable.icon_infop)
             underline_informacoes.visibility = View.VISIBLE
@@ -75,6 +79,7 @@ class InformacaoActivity : Fragment(), View.OnClickListener, ViolentometroListen
             icon_info.typeface = Typeface.DEFAULT_BOLD
             icon_violentometro.typeface = Typeface.DEFAULT
         } else if (id == R.id.icon_violentometro) {
+            isBackFragmentActived = false
             image_informacao.setImageResource(R.drawable.icon_violentrometro)
             childFragmentManager.beginTransaction().replace(R.id.frame_informacao, pageVilometro1).commit()
             underline_informacoes.visibility = View.INVISIBLE
@@ -82,8 +87,10 @@ class InformacaoActivity : Fragment(), View.OnClickListener, ViolentometroListen
             icon_info.typeface = Typeface.DEFAULT
             icon_violentometro.typeface = Typeface.DEFAULT_BOLD
         } else if(id == R.id.img_configuracao_informacao){
+            isBackFragmentActived = false
             mConfiguracaoNext.goConfiguration()
         } else if(id == R.id.img_utilizador_informacao){
+            isBackFragmentActived = false
             mConfiguracaoNext.goPerfil()
         }
     }
@@ -97,10 +104,11 @@ class InformacaoActivity : Fragment(), View.OnClickListener, ViolentometroListen
             override fun onComplete(task: Task<Uri>) {
 
                 if (task.isSuccessful) {
-                    val url = task.result.toString()
+                    try {
+                        val url = task.result.toString()
 
-                    Glide.with(context!!).load(url).into(img_utilizador_informacao)
-
+                        Glide.with(context!!).load(url).into(img_utilizador_informacao)
+                    }catch (e : NullPointerException){}
                 }else{
 
                 }
@@ -109,23 +117,52 @@ class InformacaoActivity : Fragment(), View.OnClickListener, ViolentometroListen
     }
 
     override fun goPageAsk() {
+        isBackFragmentActived = true
         val pagePerguntas = PerguntasActivity()
         pagePerguntas.setListener(this)
         childFragmentManager.beginTransaction().replace(R.id.frame_informacao, pagePerguntas).commit()
     }
 
     override fun goPage1() {
+        isBackFragmentActived = false
         childFragmentManager.beginTransaction().replace(R.id.frame_informacao, pageInformacoes).commit()
     }
 
     override fun goPageResultado(pontos: Int) {
+        isBackFragmentActived = true
         val pageResultado = ResultadoViolentometroActivity(pontos)
         childFragmentManager.beginTransaction().replace(R.id.frame_informacao, pageResultado).commit()
     }
 
+    private fun verificationConnectionWithInternet() : Boolean{
+        val conectInternet = activity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conectInternet.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true
+        }else{
+            return false
+        }
+    }
+
+    fun goBackFragmentViolentometroPressed(){
+        if(isBackFragmentActived){
+            isBackFragmentActived = false
+            childFragmentManager.beginTransaction().replace(R.id.frame_informacao, pageVilometro1).commit()
+        }
+    }
+
+    fun isBackFragmentActived() : Boolean{
+        return isBackFragmentActived
+    }
+
     override fun onStart() {
         super.onStart()
-        downloadPhotoUser()
+        if(verificationConnectionWithInternet()) {
+            try {
+                downloadPhotoUser()
+            }catch(e : NullPointerException){}
+        }
     }
 
 }

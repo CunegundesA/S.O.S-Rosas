@@ -74,9 +74,11 @@ class LoginActivit : AppCompatActivity(), View.OnClickListener {
             ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ||
             ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
             ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+            ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED ||
             ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.SEND_SMS, android.Manifest.permission.CALL_PHONE, android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.READ_PHONE_STATE,android.Manifest.permission.INTERNET), 1)
+                arrayOf(android.Manifest.permission.SEND_SMS, android.Manifest.permission.CALL_PHONE, android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_NETWORK_STATE, android.Manifest.permission.READ_PHONE_STATE,android.Manifest.permission.INTERNET), 1)
+
         }
 
         mCadastro = CadastroViewModel()
@@ -103,19 +105,7 @@ class LoginActivit : AppCompatActivity(), View.OnClickListener {
 
         if(id == R.id.button_enter) {
             if (getLoginValidation()) {
-                val textEmail = edit_text_email_login.text.toString()
-                val textPassword = edit_text_password_login.text.toString()
-
-                if(mSharedPreferences.validationFakePasswordUser(textEmail, textPassword)){
-                    val bundle = Bundle()
-                    bundle.putString("email", textEmail)
-                    val intent = Intent(applicationContext, CalendarioActivity::class.java)
-                    intent.putExtras(bundle)
-                    startActivity(intent)
-                    finish()
-                }else {
                     login()
-                }
             }
         }else if (id == R.id.text_cadastro) {
                     startActivity(Intent(applicationContext, CadastroActivity::class.java))
@@ -160,7 +150,16 @@ class LoginActivit : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(applicationContext, PrincipalActivity::class.java))
                 finish()
             }else{
-                Toast.makeText(applicationContext,"Email/Senha invalidos!", Toast.LENGTH_LONG).show()
+                if(mSharedPreferences.validationFakePasswordUser(textEmail, textPassword)){
+                    val bundle = Bundle()
+                    bundle.putString("email", textEmail)
+                    val intent = Intent(applicationContext, CalendarioActivity::class.java)
+                    intent.putExtras(bundle)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    Toast.makeText(applicationContext,"Email/Senha invalidos!", Toast.LENGTH_LONG).show()
+                }
             }
         } )
     }

@@ -1,11 +1,16 @@
 package com.example.sosrosas.ViewModel
 
 
+import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
 import android.icu.text.NumberFormat.Field.SIGN
 import android.transition.Fade.IN
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.example.sosrosas.Model.Article
@@ -15,6 +20,7 @@ import com.example.sosrosas.R
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.AuthResult
@@ -26,6 +32,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.box_erro_equal_password.*
+import kotlinx.android.synthetic.main.box_main_violencia_fisica.*
 import java.io.ByteArrayOutputStream
 import java.lang.Exception
 import java.security.spec.PSSParameterSpec.DEFAULT
@@ -43,8 +51,8 @@ class CadastroViewModel : ViewModel() {
     }
 
     //Cria um login de usuario
-    fun createLoginUser(usuario: Usuario){
-        auth.createUserWithEmailAndPassword(usuario.email, usuario.senha)
+    fun createLoginUser(usuario: Usuario, passwordUser: String){
+        auth.createUserWithEmailAndPassword(usuario.email, passwordUser)
     }
 
     //Desloga um usuario cadastrado por email e senha

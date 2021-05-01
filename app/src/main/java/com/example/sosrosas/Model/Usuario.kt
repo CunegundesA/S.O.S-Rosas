@@ -5,7 +5,6 @@ import java.sql.Date
 
 data class Usuario(
     var email: String = "",
-    var senha: String = "",
     var senhaFalsa: String = "",
     var nome: String = "",
     var nomeUsuario: String = "",

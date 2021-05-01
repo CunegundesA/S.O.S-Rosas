@@ -2,7 +2,9 @@ package com.example.sosrosas.Fragment
 
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.DialogInterface
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,13 +17,16 @@ import com.example.sosrosas.Interfaces.DenunciasListeners
 import com.example.sosrosas.Model.ContatoAjuda
 import com.example.sosrosas.R
 import com.example.sosrosas.View.RecyclerViewContatosAdapter
+import com.example.sosrosas.ViewModel.ContatosSharedPreferences
 import com.example.sosrosas.ViewModel.ContatosViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_denuncia_page1_contato.*
 import kotlinx.android.synthetic.main.activity_denuncia_page1_contato.view.*
-import java.util.ArrayList
+import java.util.*
 
 class ContatoFragment() : Fragment(), View.OnClickListener,
     RecyclerViewContatosAdapter.ContatosListerner {
@@ -35,6 +40,7 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
     private lateinit var data: DatabaseReference
     private lateinit var childEventListener: ChildEventListener
     private val auth = FirebaseAuth.getInstance()
+    private lateinit var mContatoShared : ContatosSharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +55,7 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
         val root: ViewGroup = inflater.inflate(R.layout.activity_denuncia_page1_contato,
             container,
             false) as ViewGroup
+
         root.recycler_view_contatos.layoutManager = LinearLayoutManager(context)
         mRecyclerViewContatosAdapter = RecyclerViewContatosAdapter(context!!, listContatos, this)
         mRecyclerViewContatosAdapter.setListener(this)
@@ -58,6 +65,24 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mContatoShared = ContatosSharedPreferences(context!!)
+        if(verificationConnectionWithInternet()) {
+            listernerDataBase()
+        }else{
+            try {
+                listContatos =
+                    mContatoShared.getListContatos(auth.currentUser!!.email.toString()) as ArrayList<ContatoAjuda>
+
+                if(listContatos.size > 0) {
+                    listContatos.sortBy { it.nome.toLowerCase() }
+                }
+                mRecyclerViewContatosAdapter =
+                    RecyclerViewContatosAdapter(context!!, listContatos, this)
+                mRecyclerViewContatosAdapter.setListener(this)
+                recycler_view_contatos.adapter = mRecyclerViewContatosAdapter
+            }catch (e: NullPointerException){}
+            }
+
         botao_add_contato.setOnClickListener(this)
     }
 
@@ -69,17 +94,29 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
     }
 
     override fun onClick(view: View) {
-        var id = view.id
+        val id = view.id
 
         if (id == R.id.botao_add_contato) {
             mDenunciasNext.goPageAddContato()
         }
     }
 
+    private fun verificationConnectionWithInternet() : Boolean{
+        val conectInternet = activity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conectInternet.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true
+        }else{
+            return false
+        }
+    }
+
     private fun listernerDataBase() {
         val user = auth.currentUser
         val uid = user?.uid
-        data = database.getReference().child("BD_SOSRosas").child(uid.toString()).child("Contatos")
+        data = database.getReference().child("BD_SOSRosas").child(uid.toString())
+            .child("Contatos")
 
         childEventListener = object : ChildEventListener {
 
@@ -89,15 +126,17 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
                 val contatoAjuda = dataSnapshot.getValue<ContatoAjuda>()
                 contatoAjuda?.id = key!!
                 listContatos.add(contatoAjuda!!)
+
                 mRecyclerViewContatosAdapter.notifyDataSetChanged()
             }
 
             override fun onChildChanged(dataSnapshot: DataSnapshot, s: String?) {
                 val key = dataSnapshot.key
-                var index = listKeys.indexOf(key)
+                val index = listKeys.indexOf(key)
                 val contatoAjuda = dataSnapshot.getValue<ContatoAjuda>()
                 contatoAjuda?.id = key!!
                 listContatos.set(index, contatoAjuda!!)
+
                 mRecyclerViewContatosAdapter.notifyDataSetChanged()
             }
 
@@ -115,7 +154,7 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
             override fun onCancelled(databaseError: DatabaseError) {}
         }
 
-        data.addChildEventListener(childEventListener)
+        data.orderByChild("nomeLowerCase").addChildEventListener(childEventListener)
 
     }
 
@@ -126,12 +165,31 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
 
     //Exclui o contato
     override fun excluirContato(contatoAjuda: ContatoAjuda) {
-        var alert = AlertDialog.Builder(context)
+        val alert = AlertDialog.Builder(context)
         alert.setTitle("Excluir este contato de emergência?")
         alert.setMessage("Deseja excluir ${contatoAjuda.nome} da sua lista de contatos de emergência?")
         alert.setPositiveButton("Sim", object : DialogInterface.OnClickListener {
             override fun onClick(p0: DialogInterface?, p1: Int) {
+                Thread(Runnable{
                 mContatosViewModel.remove(contatoAjuda.id)
+
+                if(!verificationConnectionWithInternet()){
+                if (listContatos.size > 0) {
+                    for (x in 0 until listContatos.size) {
+                        if (listContatos.get(x).id == contatoAjuda.id ||
+                            listContatos.get(x).nome == contatoAjuda.nome &&
+                            listContatos.get(x).celular == contatoAjuda.celular &&
+                            listContatos.get(x).emailContato == contatoAjuda.emailContato) {
+                            listContatos.remove(contatoAjuda)
+                            mContatoShared.saveListContatos(auth.currentUser!!.email.toString(), listContatos)
+                            mRecyclerViewContatosAdapter.notifyItemRemoved(x)
+                            mRecyclerViewContatosAdapter.notifyItemChanged(x, listContatos)
+                            break
+                        }
+                    }
+                }
+                }
+                }).start()
             }
 
         })
@@ -139,17 +197,15 @@ class ContatoFragment() : Fragment(), View.OnClickListener,
         alert.show()
     }
 
-    override fun onStart() {
-        super.onStart()
-        listernerDataBase()
-    }
-
     override fun onDestroy() {
         super.onDestroy()
-        if (childEventListener != null) {
-            listContatos.clear()
-            listKeys.clear()
-            data.removeEventListener(childEventListener);
+        if(verificationConnectionWithInternet()) {
+            if (childEventListener != null) {
+                mContatoShared.saveListContatos(auth.currentUser!!.email.toString(), listContatos)
+                listContatos.clear()
+                listKeys.clear()
+                data.removeEventListener(childEventListener)
+            }
         }
     }
 

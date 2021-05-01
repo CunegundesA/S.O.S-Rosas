@@ -1,10 +1,12 @@
 package com.example.sosrosas.View
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
+import android.net.ConnectivityManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,9 +15,12 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.example.sosrosas.Common.Environment
 import com.example.sosrosas.Model.ContatoAjuda
 import com.example.sosrosas.Model.Usuario
 import com.example.sosrosas.R
+import com.example.sosrosas.ViewModel.CadastroSharedPreferences
+import com.example.sosrosas.ViewModel.ContatosSharedPreferences
 import com.example.sosrosas.ViewModel.ContatosViewModel
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
@@ -38,6 +43,8 @@ class BotaoDoPanicoActivity : AppCompatActivity(), View.OnClickListener, GoogleA
     private val auth = FirebaseAuth.getInstance()
     private lateinit var mGoogleApiClient: GoogleApiClient
     private lateinit var myLocation: Location
+    private lateinit var mCadastroShared : CadastroSharedPreferences
+    private lateinit var mContatosShared : ContatosSharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,8 +54,19 @@ class BotaoDoPanicoActivity : AppCompatActivity(), View.OnClickListener, GoogleA
             supportActionBar!!.hide()
         }
 
-        loadListContato()
-        loadUserCurrent()
+        mCadastroShared = CadastroSharedPreferences(applicationContext)
+        mContatosShared = ContatosSharedPreferences(applicationContext)
+
+        if(verificationConnectionWithInternet()) {
+            loadListContato()
+            loadUserCurrent()
+        }else{
+            try {
+                usuarioAtual = mCadastroShared.getUser(auth.currentUser!!.email.toString())!!
+                listContatos = mContatosShared.getListContatos(auth.currentUser!!.email.toString()) as ArrayList<ContatoAjuda>
+            }catch (e:NullPointerException){}
+        }
+
         getListeners()
 
         mGoogleApiClient = GoogleApiClient
@@ -66,6 +84,17 @@ class BotaoDoPanicoActivity : AppCompatActivity(), View.OnClickListener, GoogleA
         botao_panico.setOnClickListener(this)
     }
 
+    private fun verificationConnectionWithInternet() : Boolean{
+        val conectInternet = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conectInternet.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true
+        }else{
+            return false
+        }
+    }
+
     override fun onClick(view: View) {
        val id = view.id
 
@@ -78,7 +107,7 @@ class BotaoDoPanicoActivity : AppCompatActivity(), View.OnClickListener, GoogleA
     }
 
     private fun ativarBotao(){
-        val uri = Uri.parse( "tel:190")
+        val uri = Uri.parse(Environment.HELP_PHONE)
         val intent = Intent(Intent.ACTION_CALL, uri)
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ){
             ActivityCompat.requestPermissions(this,
@@ -90,8 +119,10 @@ class BotaoDoPanicoActivity : AppCompatActivity(), View.OnClickListener, GoogleA
     }
 
     private fun sendSMS(){
-        for(x in listContatos){
-            sendSMS(x)
+        if(listContatos.size > 0) {
+            for (x in listContatos) {
+                sendSMS(x)
+            }
         }
     }
 
@@ -100,9 +131,11 @@ class BotaoDoPanicoActivity : AppCompatActivity(), View.OnClickListener, GoogleA
         val sms = SmsManager.getDefault()
         val address = Geocoder(this).getFromLocation(myLocation.latitude, myLocation.longitude, 1)
 
-        for (x in contato.celular) {
-            if (x != '(' && x != ')' && x != '-') {
-                numeroContato = numeroContato + x
+        if(contato.celular != "" && contato.celular != null) {
+            for (x in contato.celular) {
+                if (x != '(' && x != ')' && x != '-') {
+                    numeroContato = numeroContato + x
+                }
             }
         }
 

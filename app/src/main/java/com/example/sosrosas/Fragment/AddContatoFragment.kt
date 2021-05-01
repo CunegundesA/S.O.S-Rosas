@@ -1,7 +1,9 @@
 package com.example.sosrosas.Fragment
 
 import android.app.Activity
+import android.content.Context
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
 import android.os.AsyncTask
 import android.os.Bundle
 import android.telephony.SmsManager
@@ -13,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.example.sosrosas.Common.Environment
 import com.example.sosrosas.Interfaces.CadastroListeners
 import com.example.sosrosas.Interfaces.DenunciasListeners
 import com.example.sosrosas.Model.ContatoAjuda
@@ -20,13 +23,16 @@ import com.example.sosrosas.Model.MaskEdit
 import com.example.sosrosas.Model.Usuario
 import com.example.sosrosas.R
 import com.example.sosrosas.ViewModel.CadastroViewModel
+import com.example.sosrosas.ViewModel.ContatosSharedPreferences
 import com.example.sosrosas.ViewModel.ContatosViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_cadastro_page1.view.*
 import kotlinx.android.synthetic.main.activity_denuncia_page1_addcontatos.*
 import kotlinx.android.synthetic.main.activity_denuncia_page1_addcontatos.view.*
@@ -43,6 +49,8 @@ class AddContatoFragment : Fragment(), View.OnClickListener {
     private var usuarioAtual = Usuario()
     private val auth = FirebaseAuth.getInstance()
     private val database = FirebaseDatabase.getInstance()
+    private lateinit var mContatosShared : ContatosSharedPreferences
+    private var listContatos = ArrayList<ContatoAjuda>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +61,7 @@ class AddContatoFragment : Fragment(), View.OnClickListener {
         val root: ViewGroup = inflater.inflate(R.layout.activity_denuncia_page1_addcontatos,
             container,
             false) as ViewGroup
+
         root.text_numero_contato.addTextChangedListener(MaskEdit().mask(root.text_numero_contato,
             MaskEdit().FORMAT_CELULAR))
 
@@ -63,6 +72,13 @@ class AddContatoFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mContatosShared = ContatosSharedPreferences(context!!)
+
+        try{
+            listContatos = mContatosShared.getListContatos(auth.currentUser!!.email.toString()) as ArrayList<ContatoAjuda>
+        }catch (e : NullPointerException){
+        }
+
         botao_adicionar_contato.setOnClickListener(this)
     }
 
@@ -78,6 +94,17 @@ class AddContatoFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    private fun verificationConnectionWithInternet() : Boolean{
+        val conectInternet = activity!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = conectInternet.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected()) {
+            return true
+        }else{
+            return false
+        }
+    }
+
     override fun onClick(view: View) {
         val id = view.id
         if (id == R.id.botao_adicionar_contato) {
@@ -89,20 +116,33 @@ class AddContatoFragment : Fragment(), View.OnClickListener {
                 mContatos.nome = nome
                 mContatos.celular = numero
                 mContatos.emailContato = email
+                mContatos.nomeLowerCase = nome.toString().toLowerCase()
 
                 if(email.isEmpty() == false) {
-                    sendEmail(mContatos)
+                    if(verificationConnectionWithInternet()) {
+                        sendEmail(mContatos)
+                    }
                 }
+
                 if(numero.isEmpty() == false) {
                     sendSMS(mContatos)
                 }
+
+                Thread(Runnable {
                 mContatosViewModel.save(mContatos)
+                listContatos.add(mContatos)
+                mContatosShared.saveListContatos(auth.currentUser!!.email.toString(), listContatos)}).start()
                 text_nome_contato.text.clear()
                 text_numero_contato.text.clear()
                 text_email_contato.text.clear()
 
                 mDenunciasNext.goPageContato()
             } else {
+
+                if(nome.isEmpty()){text_nome_contato.setError("Informe o nome do contato")}
+                if(numero.isEmpty()){text_numero_contato.setError("Informe o número do contato")}
+                if(email.isEmpty()){text_email_contato.setError("Informe o email do contato")}
+
                 Toast.makeText(context,
                     "Preencha o nome e os campos de celular e/ou email!",
                     Toast.LENGTH_LONG).show()
@@ -137,12 +177,12 @@ class AddContatoFragment : Fragment(), View.OnClickListener {
 
         val session: Session = Session.getInstance(props, object : Authenticator() {
             override fun getPasswordAuthentication(): PasswordAuthentication {
-                return PasswordAuthentication("SEU_EMAIL", "SUA_SENHA")
+                return PasswordAuthentication(Environment.USER_EMAIL, Environment.USER_PASSWORD)
             }
         })
 
         val msg: Message = MimeMessage(session)
-        msg.setFrom(InternetAddress("EMAIL", false))
+        msg.setFrom(InternetAddress(Environment.USER_EMAIL, false))
         msg.setHeader("Content-Type", "text/html")
         msg.setRecipients(Message.RecipientType.TO,
             InternetAddress.parse(contato.emailContato))

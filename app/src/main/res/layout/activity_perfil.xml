@@ -47,19 +47,6 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/do_utilizador" />
 
-                <Button
-                    android:id="@+id/button_remove_foto_perfil"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="120dp"
-                    android:visibility="gone"
-                    android:layout_alignLeft="@id/foto_perfil"
-                    android:text="X"
-                    android:textSize="18sp"
-                    android:background="@drawable/radio_button_cadastro_unselected"
-                    />
-
                 </RelativeLayout>
 
                 <LinearLayout

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/boxcadastroshape"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/colorTextDefaultRed"
+                android:text="Falha na conexão de rede"
+                android:textAlignment="center"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_baseline_wifi_off_24"
+                app:tint="@color/colorTextDefaultRed"
+                android:layout_margin="16dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:textColor="@color/blackText"
+                android:text="Falha na conexão de rede, não foi possivel realizar a conexão com uma rede wifi, por favor verifique se a conexão wifi do dispositivo está ligada."/>
+
+            <TextView
+                android:id="@+id/text_msm_erro1_internet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textColor="@color/blackText"
+                android:text="Para realizar a denuncia é necessario que você esteja conectado a Internet."/>
+
+            <TextView
+                android:id="@+id/text_msm_erro2_internet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textColor="@color/blackText"
+                android:text="Modo Offline Ativado! Você pode ainda mesmo sem internet adicionar, remover e excluir os contatos de emergência e autualizar algumas informações do seu perfil."/>
+
+            <TextView
+                android:id="@+id/text_msm_erro3_internet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textColor="@color/blackText"
+                android:text="As senhas só podem ser atualizadas com acesso a internet!"/>
+
+            <Button
+                android:id="@+id/button_ok_error_conection_internet"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:text="OK"
+                android:textSize="16sp"
+                android:textColor="@color/colorTextDefaultWhite"
+                android:background="@drawable/buttonshape_pos_cadastro"
+                android:layout_margin="16dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
