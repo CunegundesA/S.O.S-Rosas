@@ -1,11 +1,10 @@
 package com.example.sosrosas.Common
 
 class Environment private constructor(){
-
     companion object{
-        val API_KEY = "your API KEY"
-        val USER_EMAIL = "your Email"
-        val USER_PASSWORD = "your Password"
-        val HELP_PHONE = "your phone number"
+        val API_KEY = "YOUR_API_KEY"
+        val USER_EMAIL = "YOUR_EMAIL"
+        val USER_PASSWORD = "YOUR_PASSWORD"
+        val HELP_PHONE = "YOUR_PHONE_NUMBER"
     }
 }
