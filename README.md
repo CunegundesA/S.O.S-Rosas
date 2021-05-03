@@ -43,4 +43,21 @@ Abra a pasta no seu editor, aperte em build e execute em um emulador ou em um di
 
 # 👨‍💻 Autores e Desenvolvedores
 
-<p>Affonso Henrique Ruiz Jurema e Aline Alves Cunegundes</p>
+<img src="https://media-exp1.licdn.com/dms/image/C4D03AQHDufARiPFmWA/profile-displayphoto-shrink_200_200/0/1616451594388?e=1625702400&v=beta&t=nfpi5kwhBI_Ygz9rFwO4_ayDAaTNy55oBNkV1wa19Yw" width="100" height="100"/>
+
+Aline Alves Cunegundes
+
+Gmail: alvescunegundes@gmail.com
+
+Linkedin: https://www.linkedin.com/in/aline-alves-cunegundes-008029121/
+
+<img src="https://avatars.githubusercontent.com/u/43937107?s=400&u=5b83906cad7f603ae198f1c3c98e6bf60249c218&v=4" width="100" height="100" border-radius="50"/>
+
+Affonso Henrique Ruiz Jurema
+
+Gmail: affonsohenriqueruiz@gmail.com
+
+Linkedin: https://www.linkedin.com/in/affonso-henrique-ruiz-jurema-b8744b210/
+
+
+
