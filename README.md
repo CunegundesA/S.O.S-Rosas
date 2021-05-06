@@ -47,17 +47,15 @@ Abra a pasta no seu editor, aperte em build e execute em um emulador ou em um di
 
 Aline Alves Cunegundes
 
-Gmail: alvescunegundes@gmail.com
-
-Linkedin: https://www.linkedin.com/in/aline-alves-cunegundes-008029121/
+[![Linkedin Badge](https://img.shields.io/badge/-Aline%20Alves%20Cunegundes-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/aline-alves-cunegundes-008029121/)](https://www.linkedin.com/in/aline-alves-cunegundes-008029121/) 
+[![Gmail Badge](https://img.shields.io/badge/-alvescunegundes@gmail.com-d93025?style=flat-square&logo=Gmail&logoColor=white&link=mailto:alvescunegundes@gmail.com)](mailto:alvescunegundes@gmail.com)
 
 <img src="https://avatars.githubusercontent.com/u/43937107?s=400&u=5b83906cad7f603ae198f1c3c98e6bf60249c218&v=4" width="100" height="100" border-radius="50"/>
 
 Affonso Henrique Ruiz Jurema
 
-Gmail: affonsohenriqueruiz@gmail.com
-
-Linkedin: https://www.linkedin.com/in/affonso-henrique-ruiz-jurema-b8744b210/
+[![Linkedin Badge](https://img.shields.io/badge/-Affonso%20Henrique%20Ruiz%20Jurema-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/affonso-henrique-ruiz-jurema-b8744b210/)](https://www.linkedin.com/in/affonso-henrique-ruiz-jurema-b8744b210/)
+[![Gmail Badge](https://img.shields.io/badge/-affonsohenriqueruiz@gmail.com-d93025?style=flat-square&logo=Gmail&logoColor=white&link=mailto:affonsohenriqueruiz@gmail.com)](mailto:affonsohenriqueruiz@gmail.com)
 
 
 
