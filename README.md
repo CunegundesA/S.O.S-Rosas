@@ -43,6 +43,10 @@ $ git clone https://github.com/AACJ/S.O.S-Rosas.git
 ## Execução
 Abra a pasta no seu editor, aperte em build e execute em um emulador ou em um dispositivo físico Android. 
 
+# :notebook: Manual do usuário 
+
+Clique [aqui](https://github.com/AACJ/S.O.S-Rosas/blob/master/assets/Manual%20do%20usu%C3%A1rio-%20S.O.S%20Rosas.pdf) para visualizar o Manual do usuário.
+
 # 👨‍💻 Autores e Desenvolvedores
 
 <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHDufARiPFmWA/profile-displayphoto-shrink_200_200/0/1616451594388?e=1625702400&v=beta&t=nfpi5kwhBI_Ygz9rFwO4_ayDAaTNy55oBNkV1wa19Yw" width="100" height="100"/>
