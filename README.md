@@ -4,7 +4,7 @@
 
 O S.O.S Rosas é uma aplicação mobile que tem como objetivo auxiliar mulheres a realizar pedidos de ajuda ou denúncias quando estiverem em situação de perigo ou estiverem sofrendo algum tipo de violência.
 
-A aplicação realiza pedidos de ajuda por meio de SMS enviando uma mensagem contendo informações sobre a localização do usuário, também a partir dela é possível fazer denúncias, ficar informado sobre as localizações de todos os departamentos de polícia, hospitais e delegacias especializadas em crimes contra a mulher e manter o usuário informado com algumas notícias da atualidade.
+A aplicação realiza pedidos de ajuda por meio de SMS enviando uma mensagem contendo informações sobre a localização do usuário, também a partir dela é possível fazer denúncias, ficar informado sobre as localizações de todos os departamentos de polícia, hospitais e delegacias especializadas em crimes contra a mulher e manter o usuário informado com algumas notícias da atualidade. A aplicação também conta com uma tela de agenda menstrual, esta tela faz parte de um sistema de segurança para quando o usuário estiver em perigo e seu agressor estiver o obrigando a entrar no aplicativo, assim mantendo a segurança de seus dados pessoas e o levando para uma outra área diferente do aplicativo.
 
 ## :iphone: Layout Mobile
 
@@ -24,6 +24,8 @@ A aplicação realiza pedidos de ajuda por meio de SMS enviando uma mensagem con
 <img src="https://github.com/AACJ/S.O.S-Rosas/blob/master/assets/Screenshot_2021-05-02-12-59-26-978_com.example.sosrosas.jpg" width="200" height="400"/>
 
 <img src="https://github.com/AACJ/S.O.S-Rosas/blob/master/assets/Screenshot_2021-05-02-13-00-15-380_com.example.sosrosas.jpg" width="200" height="400"/>
+
+<img src="https://github.com/CunegundesA/S.O.S-Rosas/blob/master/assets/WhatsApp%20Image%202021-05-14%20at%2015.07.24.jpeg" width="200" height="400"/>
 </p>
 
 # 🛠 Tecnologias Utilizadas
